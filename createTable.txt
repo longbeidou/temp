@@ -1,0 +1,25 @@
+CREATE TABLE user ( 
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+password VARCHAR(60) NOT NULL,
+token CHAR(60),
+is_admin CHAR(1) DEFAULT '0',
+is_active CHAR(1) DEFAULT '0',
+create_at DATETIME NOT NULL,
+update_at DATETIME NOT NULL
+) engine=InnoDB default charset=utf8;
+
+CREATE TABLE article ( 
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id INT UNSIGNED NOT NULL,
+cate_id INT UNSIGNED NOT NULL,
+title VARCHAR(80) NOT NULL,
+content TEXT NOT NULL,
+create_at DATETIME NOT NULL,
+update_at DATETIME NOT NULL
+) engine=InnoDB default charset=utf8;
+
+CREATE TABLE category (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL
+) engine=InnoDB default charset=utf8;
