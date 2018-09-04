@@ -5,8 +5,8 @@ password VARCHAR(60) NOT NULL,
 token CHAR(60),
 is_admin CHAR(1) DEFAULT '0',
 is_active CHAR(1) DEFAULT '0',
-create_at DATETIME NOT NULL,
-update_at DATETIME NOT NULL
+create_time DATETIME NOT NULL,
+update_time DATETIME NOT NULL
 ) engine=InnoDB default charset=utf8;
 
 CREATE TABLE article ( 
@@ -14,9 +14,12 @@ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT UNSIGNED NOT NULL,
 cate_id INT UNSIGNED NOT NULL,
 title VARCHAR(80) NOT NULL,
+brief VARCHAR(80) NOT NULL,
+author CHAR(30) NOT NULL DEFAULT '网站编辑',
+thumb CHAR(100) NOT NULL,
 content TEXT NOT NULL,
-create_at DATETIME NOT NULL,
-update_at DATETIME NOT NULL
+create_time DATETIME NOT NULL,
+update_time DATETIME NOT NULL
 ) engine=InnoDB default charset=utf8;
 
 CREATE TABLE category (
